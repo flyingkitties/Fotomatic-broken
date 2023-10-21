@@ -26,6 +26,7 @@ body {
 
 .image-container {
   overflow: hidden;
+  min-width: 100%;
 }
 
 .image-container img {
@@ -45,7 +46,7 @@ header {
   display: grid;
   grid-row: 1;
   width: 100%;
-  height: 84px;
+  height: 5.25rem;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
   align-content: center;
@@ -56,7 +57,7 @@ header {
 header .content {
   display: flex;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 1.875rem;
 }
 
 header .logo {
@@ -91,14 +92,51 @@ header .mobile {
   display: none;
 }
 
-@media only screen and (max-width: 760px) {
+/* Tablet */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  header .content {
+    padding: 0 0.937rem;
+  }
+  header .logo {
+    padding-left: 1.25rem;
+  }
+  header .mobile {
+    display: block;
+  }
+  nav a img {
+    vertical-align: middle;
+  }
+  header .mobile li:nth-child(-n + 3) {
+    display: none;
+  }
+
+  header .mobile li:last-child {
+    display: inline;
+    padding: 0;
+    justify-content: end;
+  }
+
+  header .mobile .button {
+    padding: 0.1875rem 0.5rem;
+    background-color: #9dc20b;
+    line-height: 1.6;
+    color: white;
+  }
+}
+@media only screen and (max-width: 767px) {
+  header {
+    max-height: 3rem;
+  }
   header .desktop {
     display: none;
   }
 
   header .mobile {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
     width: 100%;
+    height: 2rem;
   }
 
   header .content {
@@ -107,17 +145,24 @@ header .mobile {
 
   header .mobile ul {
     display: flex;
+
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    padding: 0;
   }
 
   header .mobile li {
     padding: 0;
   }
 
-  header .mobile .button {
-    padding: 0.1875rem 0.5rem;
+  header .mobile li img {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  header .mobile li .button {
+    padding: 0.187rem 0.5rem;
     background-color: #9dc20b;
     line-height: 1.6;
     color: white;
@@ -183,11 +228,11 @@ header .mobile {
   display: grid;
   justify-items: center;
   align-items: center;
-  width: 408px;
-  height: 64px;
+  width: 25.5rem;
+  height: 4rem;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
   #sign-up-section {
     align-items: center;
     justify-content: center;
@@ -219,17 +264,29 @@ header .mobile {
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 767px) {
   #sign-up-section {
     height: 20rem;
+    max-width: fit-content;
+  }
+  #sign-up-cta {
+    max-width: 90%;
+    padding: 0;
+  }
+  #sign-up-cta .content {
+    max-width: 90%;
   }
 
   #sign-up-cta h1 {
-    font-size: 2.25rem;
+    line-height: 0;
+    font-size: 2rem;
   }
 
-  #sign-up-cta h2 {
-    font-size: 2rem;
+  #sign-up-cta .striking h2 {
+    font-size: 1.5rem;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -238,14 +295,14 @@ header .mobile {
 #features-section {
   display: flex;
   justify-content: space-between;
-  padding: 4rem 5%;
+  padding: 4rem 5% 2.875rem 5%;
   background-color: #f3f3f3;
 }
 
 .feature {
   flex: 1;
   padding: 2rem;
-  margin: 0px 1.25rem;
+  margin: 0 1.25rem;
   background-color: white;
   width: 50%;
   display: inline-block;
@@ -276,7 +333,11 @@ header .mobile {
   color: #4a4a4a;
 }
 
-@media only screen and (max-width: 890px) {
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  #features-section {
+    padding: 1.25rem 0;
+  }
+
   .feature h2 {
     font-size: 1.125rem;
     line-height: 1.3;
@@ -289,7 +350,7 @@ header .mobile {
   }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 767px) {
   #features-section {
     flex-flow: column;
     padding: 0;
@@ -297,7 +358,8 @@ header .mobile {
 
   .feature {
     margin: 0;
-    padding: 1.25rem 1rem 0 1rem;
+    padding: 1rem 1rem 1.875rem 1rem;
+    width: 92%;
   }
 }
 
@@ -329,9 +391,44 @@ header .mobile {
 #filters-section .images-container {
   max-width: 100%;
   padding: 0 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-@media only screen and (max-width: 760px) {
+#filters-section .image-container {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  #filters-section {
+    padding: 1.5rem 0 0 0;
+  }
+
+  #filters-section .content {
+    margin-bottom: 1rem;
+    padding: 1.875rem 0;
+  }
+
+  #filters-section .content h2 {
+    margin: 0;
+    line-height: 1;
+  }
+
+  #filters-section .content h3 {
+    line-height: 1.4;
+  }
+
+  #filters-section .images-container {
+    padding: 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  #filters-section .extra {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 767px) {
   #filters-section {
     padding: 1.5rem 0 0 0;
   }
@@ -354,6 +451,7 @@ header .mobile {
 
   #filters-section .images-container {
     padding: 0;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   #filters-section .extra {
@@ -367,11 +465,13 @@ header .mobile {
   background-color: #f3f3f3;
 }
 
-#quotes-section content {
+#quotes-section .content {
   padding: 5rem 0;
+  display: flex;
+  justify-content: center;
 }
 
-#quotes-section quote {
+#quotes-section .quote {
   padding-right: 1.875rem;
   font-family: 'Palatino', serif;
   font-size: 1.875rem;
@@ -380,21 +480,29 @@ header .mobile {
   color: #4a4a4a;
 }
 
-#quotes-section quote-citation {
+#quotes-section .quote-citation {
   height: 1.875rem;
 }
-
-@media only screen and (max-width: 760px) {
-  #quotes-section content {
-    padding: 1.875rem 0.625rem;
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  #quotes-section .content {
+    display: flex;
+    padding: 2rem;
+    align-items: center;
   }
-
-  #quotes-section quote {
+  #quotes-section .quote {
+    padding-right: 1rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #quotes-section .content {
+    padding: 1.875rem 0.625rem;
+    display: block;
+  }
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
   }
-
-  #quotes-section quote-citation {
+  #quotes-section .quote-citation {
     display: block;
     padding-top: 1rem;
     margin: auto;
@@ -418,7 +526,7 @@ footer .copyright {
   flex-grow: 1;
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (max-width: 767px) {
   footer .content {
     font-size: 0.625rem;
   }
